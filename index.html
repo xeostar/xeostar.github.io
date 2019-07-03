@@ -31,7 +31,7 @@
     <meta name="twitter:card" content="summary">
     <!-- CSS -->
     <style>
-        @import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
+        @import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
         @import url(https://fonts.googleapis.com/css?family=Ubuntu);
         @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
         @media screen and (orientation:landscape) {
@@ -58,7 +58,7 @@
             justify-content: flex
         }
         .box {
-            font-family: 'Roboto Mono', monospace;
+            font-family: 'Roboto', sans-serif;
             display: flex;
             flex-direction: row;
             margin: auto;
@@ -85,11 +85,12 @@
             padding-left: 0
         }
         h1 {
-            font-weight: 700;
+            font-weight: normal !important;
             display: block;
             letter-spacing: 2px;
             margin: 0;
             padding: 0
+            text-decoration: none
         }
         h2,
         h3,
@@ -107,7 +108,7 @@
             padding: 0
         }
         a {
-            font-weight: 700;
+            font-weight: normal !important;
             text-decoration: none;
             color: #eee;
             margin: 0;
@@ -139,18 +140,39 @@
                 <a></a>
             </div>
                 <body>
-                    <audio autoplay loop playsinline>
+                    <audio> autoplay loop playsinline>
                         <source src="music.mp3" type="audio/mpeg" autostart="false" loop="true" hidden="true">
                         <input type="button" value="Play" onclick="document.music.play()"> Your browser does not support the audio element.
                     </audio>
                     <body>
-                    <p class="line anim-typewriter">xeostar</p>
+                      <div id="clockbox"></div>
+                      <div id="clockbox"></div>
+
+                      <script type="text/javascript">
+                      var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                      var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+                      function GetClock(){
+                      var d=new Date();
+                      var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+                      var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds();
+                      if(nmin<=9) nmin="0"+nmin;
+                      if(nsec<=9) nsec="0"+nsec;
+
+                      var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+"";
+                      document.getElementById('clockbox').innerHTML=clocktext;
+                      }
+
+                      GetClock();
+                      setInterval(GetClock,1000);
+                      </script>
                     <br>
+                    <br>
+                    <p class="line anim-typewriter">xeostar</p>
+
                     </p>
-                    <p><a href="https://youtube.com/channel/UCRWY3_4-L7TTYwUgkZ45esQ">youtube</a> <font color="grey"> | </font> <a href="https://steamcommunity.com/id/ventbully">steam</a> <font color="grey"> | </font> <a href="https://twitter.com/neoxhar">twitter</a></p>
-                    <p>
-                        <br>
-                    </p>
+                    <p><a href="https://youtube.com/channel/UCRWY3_4-L7TTYwUgkZ45esQ">youtube</a> <font color="white"> | </font> <a href="https://steamcommunity.com/id/ventbully">steam</a> <font color="white"> | </font> <a href="https://twitter.com/neoxhar">twitter</a> <font color="white"> | </font> <a href="https://steamcommunity.com/groups/xccounts">xccounts</a></p>
+
                     <p><a href="https://discord.gg/Zn7GrcT">discord</a>
                         <br>
                         <br>
